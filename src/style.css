@@ -2,13 +2,27 @@ body{
 	background: #efefef;
 	padding:0;
 	margin:0;
+	overflow-x: hidden;
 }
+img{
+	position: fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	min-height: 100%;
+}
+
+
 .front{
 	position: relative;
 	width:98%;
-	height:650px;
+	height:700px;
 	margin:1%;
 	background: #fff;
+	transition: .3s;
+}
+.front:hover{
+	opacity: .8;
 }
 .front-title{
 	position: relative;
@@ -36,27 +50,28 @@ body{
 .title:hover h1{
 	margin-right: 3em;
 }
-.title:hover p{
+.title:hover h2{
 	opacity: 1;
 	margin-top: -2.5em;
 }
 .title h1{
-	transition: .5s;
+	transition: .3s;
 	font-family: arial;
 	font-weight: normal;
 	font-size: 5em;
 	margin:0px;
 	padding: 0px;
 }
-.title p{
+.title h2{
 	opacity: 0;
 	/*float: left;*/
-	transition: 1s;
+	transition: .3s;
 	font-family: arial;
 	font-size: 1.5em;
-	margin-right: -15em;
-	margin-top: 10em;
+	margin-right: -16em;
+	margin-top: 5em;
 	padding: 0px;
+	font-weight: bold;
 }
 
 .front-option{
@@ -79,11 +94,14 @@ body{
 	cursor: pointer;
 	height: 3em;
 	
-	transition:.5s;
+	transition:.3s;
 
 }
 .button-content:hover{
 	background: #000;
+	color: #fff;
+}
+.button-content:hover p a{
 	color: #fff;
 }
 .button-content p{
@@ -91,6 +109,11 @@ body{
 	font-size: 1em;
 	font-family: arial;
 	width:100%;
+	color: #000;
+}
+.button-content p a{
+	color: #000;
+	transition: .3s;
 }
 .icon{
 	opacity: 0;
@@ -106,4 +129,18 @@ body{
 	opacity: 1;
 	margin-right:10px;
 	
+}
+
+
+
+
+
+.footer{
+	position: relative;
+	width: 100%;
+	text-align: center;
+	background: #000;
+}
+.footer p{
+	color: #fff;
 }
