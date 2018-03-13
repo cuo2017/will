@@ -17,6 +17,7 @@
     "express": "^4.16.2",
     "fs": "^0.0.1-security",
     "jquery": "^3.3.1",
+    "lodash": "^4.17.5",
     "moment": "^2.21.0",
     "mongoose": "^5.0.7",
     "react": "^16.2.0",
@@ -33,6 +34,11 @@
     "webpack-dev-server": "^2.11.1"
   },
   "scripts": {
-    "start": "node_modules/.bin/webpack-dev-server --open"
+    "start": "nodemon bin/www",
+    "build": "./node_modules/.bin/webpack",
+    "dev-build": "./node_modules/.bin/webpack-dev-server --open"
+  },
+  "devDependencies": {
+    "webpack-cli": "^2.0.11"
   }
 }

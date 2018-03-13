@@ -8,7 +8,7 @@ import { Tag, message, Upload, List, Avatar, Row, Col, Select, Card, Input, Menu
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-
+import 'lodash';
 
 import { BrowserRouter,Switch, Route ,Link } from 'react-router-dom';
 
@@ -124,80 +124,63 @@ class BlogBoardList extends React.Component {
     this.state = {
       data:[],
       good:'like-o',
+      kind: undefined,
     };
     // this.props.match.params.kind
+    this.get = this.get.bind(this);
     this.componentDidMount = () => {
-
-      $.ajax({
-        url: '/getBlogByConditions',
-        type: 'POST',
-        dataType: 'json',
-        data:{"kind":undefined},
-        success:data => {
-          listData =[];
-          for (let i = 0; i < data.length; i++) {
-            listData.push({
-              number: data[i].number,
-              href: data[i].title,
-              title: data[i].title,
-              img: data[i].img,
-              description: data[i].description,
-              content: data[i].content,
-              date:data[i].date,
-              kind:data[i].kind,
-              good:data[i].good,
-              goodState: 'like-o',
-              
-            });
-          }
-          this.setState({
-            data:listData,
-          });
-        }
+      this.get();
+      this.setState({
+        'kind':this.props.match.params.kind
       });
     }
-
-
-    this.componentDidUpdate = () => {
-      let kind;
-      if(this.props.match.params.kind){
-        kind = this.props.match.params.kind;
+    
+    // loadash插件帮忙解决过度渲染的问题
+    this.shouldComponentUpdate = (nextProps, nextState) => {
+      if (!_.isEqual(this.props, nextProps) || !_.isEqual(this.state, nextState)) {
+         return true
+      } 
+      else {
+         return false
       }
-      else{
-        kind = undefined;
-      }
-      $.ajax({
-        url: '/getBlogByConditions',
-        type: 'POST',
-        dataType: 'json',
-        data:{"kind":kind},
-        success:data => {
-          listData =[];
-          for (let i = 0; i < data.length; i++) {
-            listData.push({
-              number: data[i].number,
-              href: data[i].title,
-              title: data[i].title,
-              img: data[i].img,
-              description: data[i].description,
-              content: data[i].content,
-              date:data[i].date,
-              kind:data[i].kind,
-              good:data[i].good,
-              goodState: 'like-o',
-              comment:data[i].comment.length,
-            });
-          }
-          this.setState({
-            data:listData,
-          });
-        }
-      });
-    }
+    };
   }
+
+  get(){
+    $.ajax({
+      url: '/getBlogByConditions',
+      type: 'POST',
+      dataType: 'json',
+      data:{"kind":this.props.match.params.kind},
+      success:data => {
+        listData =[];
+        for (let i = 0; i < data.length; i++) {
+          listData.push({
+            number: data[i].number,
+            href: data[i].title,
+            title: data[i].title,
+            img: data[i].img,
+            description: data[i].description,
+            content: data[i].content,
+            date:data[i].date,
+            kind:data[i].kind,
+            good:data[i].good,
+            goodState: 'like-o',
+            comment:data[i].comment.length,
+          });
+        }
+        
+        this.setState({
+          data:listData,
+        });
+      }
+    });
+    console.log(this.props.match.params.kind);
+  }
+
   render(){
       
-
+      this.get();
       return (
         <div className="blog-board-right">
           <List
