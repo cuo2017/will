@@ -80,11 +80,11 @@ class BlogBoardLeft extends React.Component {
     return (
       <div onLoad={this.handleClick} className = "blog-board-left">
         <Card style = {{ width: 300 }}
-              cover = { <img alt="example" src="http://localhost:7000/images/1.png" /> }
+              cover = { <img alt="example" src="http://cuostudio.com:7000/images/1.png" /> }
               actions = { [ <Icon type="profile" />  , <div ><IconText className="card-like" type="like-o" text="0"/></div> ] }
         >
           <Meta
-            avatar={<Avatar src="http://localhost:7000/images/cuo.png" />}
+            avatar={<Avatar src="http://cuostudio.com:7000/images/cuo.png" />}
             title="Will"
             description="A Learner aims to be A Coder"
           />
