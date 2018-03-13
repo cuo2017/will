@@ -127,7 +127,7 @@ app.route('/uploadImg').post( multipart() ,function (req, res, next) {
   var filename = req.files.file.originalFilename;
 
   //复制文件到指定路径
-  var targetPath = '../../dist/images/' + filename;
+  var targetPath = './dist/images/' + filename;
 
   // //复制文件流
   fs.createReadStream(req.files.file.path).pipe(fs.createWriteStream(targetPath));
