@@ -1,0 +1,122 @@
+body{
+	background: #fff;
+	padding:0;
+	margin:0;
+	overflow-x: hidden;
+}
+img{
+	position: fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	min-height: 100%;
+	/*display: none;*/
+}
+
+.a-nav{
+	position: fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	height: 4em;
+	background: #fff;
+	z-index: 1;
+	/*text-align: center;*/
+}
+.a-nav button{
+	text-align: center;
+	margin-left: 3em;
+}
+.a-slider{
+	position: relative;
+	left:0px;
+	float: left;
+}
+
+/*editor*/
+.a-editor{
+	position: relative;
+	margin-left:22%;
+	margin-top:5em;
+	width:76%;
+	height: 30em;
+	background: #fff;
+	padding: 20px;
+}
+
+.ql-container{
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	height: 20em;
+}
+.ql-toolbar{
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	height:3em;
+}
+#a-editor-button{
+	/*margin-top: 1em;*/
+}
+.a-editor-title{
+	position: relative;
+	width:100%;
+	/*background: #000;*/
+	height: 20em;
+	margin-top: 1em;
+}
+.a-editor-title-part{
+	position: relative;
+	float: left;
+	margin-top:10px;
+	width: 100%;
+}
+/* tile uploaded pictures */
+.upload-list-inline .ant-upload-list-item {
+  float: left;
+  width: 200px;
+  margin-right: 8px;
+}
+.upload-list-inline .ant-upload-animate-enter {
+  animation-name: uploadAnimateInlineIn;
+}
+.upload-list-inline .ant-upload-animate-leave {
+  animation-name: uploadAnimateInlineOut;
+}
+.ant-upload-list{
+	/*height: 2em;*/
+	height: 80px;
+}
+
+
+.a-editor-upload{
+	position: relative;
+	margin: 0;
+}
+.a-editor-upload img{
+	position: relative;
+}
+.a-editor-title-part-title{
+	margin-top: 0;
+}
+.ant-upload{
+	margin-top: 10px;
+}
+
+
+
+/*manager*/
+
+.a-manager{
+	position: relative;
+	margin-left:22%;
+	margin-top:5em;
+	width:76%;
+	background: #fff;
+	padding: 10px;
+}
+
+.ant-avatar > img{
+	position: relative;
+}
+
+

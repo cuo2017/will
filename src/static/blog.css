@@ -1,0 +1,96 @@
+body{
+	background: #fff;
+	padding:0;
+	margin:0;
+	overflow-x: hidden;
+}
+.blog-header{
+	position: fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	background: #fff;
+	z-index: 1;
+}
+
+.blog-board{
+	position: absolute;
+	top:5em;
+	left:0px;
+	width:100%;
+	margin-bottom: 50px;
+}
+.blog-board img{
+	position: relative;
+	/*width: 300px;*/
+}
+.blog-board-left{
+	position: relative;
+	height: 100px;
+	margin-left: 5%;
+	width: 25%;
+	float: left;
+}
+
+
+.blog-board-right{
+	position:relative;
+	margin-left:1%;
+	background: #fff;
+	width: 64%;
+	height: auto;
+	float: left;
+	padding: 20px;
+}
+.blog-board-right img{
+	width: 300px;
+}
+
+
+
+.blog-item-content{
+	height: 13em;
+	overflow-y: hidden;
+}
+
+.blog-board-right .ant-list-item-content{
+	height: 15em ;
+	overflow-y: hidden;
+}
+
+.blog-board-content{
+	position:relative;
+	margin-left:20px;
+	background: #fff;
+	width: 60%;
+	height: auto;
+	float: left;
+	padding: 20px;
+}
+.blog-board-content-body-img{
+	text-align: center;
+	margin-bottom: 1em;
+	overflow-y: hidden;
+}
+.blog-board-content-body-img img{
+	width:400px;
+}
+.blog-board-content-header{
+	width: 100%;
+}
+
+
+.close{
+	position: absolute;
+	top:1em;
+	right: 1em;
+	cursor: pointer;
+}
+.blog-board-right-title a{
+	margin-right: 3em;
+}
+.blog-board-content-body-good{
+	width: 100%;
+	cursor: pointer;
+	text-align: center;
+}
